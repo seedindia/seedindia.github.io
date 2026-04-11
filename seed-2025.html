@@ -25,8 +25,6 @@
   .masthead { max-width: var(--max-width); margin: 0 auto; padding: 56px 32px 0; text-align: center; }
   .wordmark { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 68px; letter-spacing: 0.22em; color: var(--text); text-indent: 0.22em; border-bottom: none; line-height: 1; }
   .wordmark:hover { color: var(--accent); border-bottom: none; }
-  .fleuron { display: inline-block; width: 64px; height: 30px; color: var(--accent); vertical-align: middle; }
-  .ornament .fleuron { width: 72px; height: 34px; }
   .masthead-tagline { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--text-secondary); margin-top: 14px; }
   .masthead-rule { max-width: var(--max-width); margin: 28px auto 0; padding: 0 32px; }
   .masthead-rule hr { border: none; border-top: 1px solid var(--border-strong); }
@@ -41,7 +39,7 @@
   .page-head h1 { font-family: var(--display); font-weight: 600; font-size: 48px; color: var(--text); margin-bottom: 12px; letter-spacing: -0.005em; }
   .page-head .meta { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--text-secondary); }
 
-  .ornament { text-align: center; padding: 36px 0 10px; }
+  .ornament { text-align: center; color: var(--accent); font-size: 34px; line-height: 1; letter-spacing: 0.5em; padding: 36px 0 12px; user-select: none; }
 
   .program-container { max-width: var(--max-width); margin: 0 auto; padding: 18px 32px 48px; }
   .program-note { font-size: 14px; font-style: italic; color: var(--text-muted); margin-bottom: 12px; text-align: center; }
@@ -67,14 +65,6 @@
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <symbol id="sprout" viewBox="0 0 60 32">
-      <path d="M4 16 C 8 -2, 52 -2, 56 16 C 52 34, 8 34, 4 16 Z" fill="currentColor"/>
-    </symbol>
-  </defs>
-</svg>
-
 <header class="masthead">
   <a href="index.html" class="wordmark">SEED</a>
   <div class="masthead-tagline">Symposium on Evidence of Economic Development</div>
@@ -96,7 +86,7 @@
   <div class="meta">28–29 June 2025 · IIM Bangalore · Classroom N-001</div>
 </div>
 
-<div class="ornament"><svg class="fleuron" aria-hidden="true" focusable="false"><use href="#sprout"/></svg></div>
+<div class="ornament">❦</div>
 
 <div class="program-container">
   <div class="program-note">The full program is reproduced below. <a href="seed-2025-program.html" target="_blank" rel="noopener">Open in a new tab ↗</a></div>
