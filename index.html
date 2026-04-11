@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEED — Symposium on Evidence of Economic Development</title>
+<meta name="description" content="SEED is a boutique symposium on the economics of development, broadly defined.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7ee;
+    --bg-alt: #f3ecd8;
+    --paper: #fffdf7;
+    --text: #1f1a17;
+    --text-secondary: #5a4f47;
+    --text-muted: #9a8e83;
+    --border: #e5dcc7;
+    --border-strong: #cfc2a4;
+    --accent: #7a1e2b;
+    --accent-soft: #a43c3e;
+    --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --max-width: 760px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body); color: var(--text); background: var(--bg);
+    line-height: 1.65; font-size: 19px; -webkit-font-smoothing: antialiased;
+    font-feature-settings: "liga", "dlig", "kern";
+  }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(122,30,43,0.25); transition: border-color 0.15s, color 0.15s; }
+  a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+
+  /* Masthead */
+  .masthead { max-width: var(--max-width); margin: 0 auto; padding: 56px 32px 0; text-align: center; }
+  .wordmark { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 68px; letter-spacing: 0.22em; color: var(--text); text-indent: 0.22em; border-bottom: none; line-height: 1; }
+  .wordmark:hover { color: var(--accent); border-bottom: none; }
+  .masthead-tagline { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--text-secondary); margin-top: 14px; letter-spacing: 0.01em; }
+  .masthead-rule { max-width: var(--max-width); margin: 28px auto 0; padding: 0 32px; }
+  .masthead-rule hr { border: none; border-top: 1px solid var(--border-strong); }
+  .masthead-rule .double { border-top: 1px solid var(--border-strong); border-bottom: 1px solid var(--border-strong); height: 4px; }
+
+  nav.primary { max-width: var(--max-width); margin: 0 auto; padding: 14px 32px 18px; text-align: center; }
+  nav.primary a {
+    display: inline-block; font-family: var(--body);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--text-secondary);
+    margin: 0 14px; padding: 4px 2px; border-bottom: 1px solid transparent;
+  }
+  nav.primary a:hover, nav.primary a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* Lede */
+  .lede { max-width: var(--max-width); margin: 0 auto; padding: 40px 32px 10px; text-align: center; }
+  .eyebrow { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; }
+  .lede h1 { font-family: var(--display); font-weight: 600; font-size: 44px; line-height: 1.12; color: var(--text); max-width: 620px; margin: 0 auto 20px; letter-spacing: -0.005em; }
+  .lede .standfirst { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.45; color: var(--text-secondary); max-width: 580px; margin: 0 auto; }
+
+  /* Section */
+  section { max-width: var(--max-width); margin: 0 auto; padding: 40px 32px 8px; }
+  .ornament { text-align: center; color: var(--border-strong); font-size: 20px; letter-spacing: 0.5em; padding: 32px 0 8px; user-select: none; }
+  .section-label { display: block; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  section h2 { font-family: var(--display); font-weight: 600; font-size: 30px; color: var(--text); text-align: center; margin-bottom: 22px; letter-spacing: -0.005em; }
+  section p { margin-bottom: 18px; color: var(--text); }
+  section p.dropcap::first-letter {
+    font-family: var(--display); float: left; font-size: 62px; line-height: 0.9;
+    padding: 6px 8px 0 0; font-weight: 700; color: var(--accent);
+  }
+
+  /* Editions list */
+  .editions { margin-top: 6px; border-top: 1px solid var(--border-strong); }
+  .edition {
+    display: grid; grid-template-columns: 140px 1fr auto;
+    gap: 24px; align-items: baseline;
+    padding: 22px 4px; border-bottom: 1px solid var(--border);
+    text-decoration: none; border-left: none; border-right: none;
+    color: var(--text); transition: background 0.15s, padding 0.15s;
+  }
+  .edition:hover { background: rgba(122,30,43,0.04); }
+  .edition .year { font-family: var(--display); font-weight: 600; font-size: 38px; color: var(--accent); line-height: 1; letter-spacing: 0.01em; }
+  .edition .details .title { font-family: var(--display); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .edition .details .sub { font-size: 15.5px; font-style: italic; color: var(--text-secondary); }
+  .edition .chevron { font-family: var(--display); font-size: 22px; color: var(--text-muted); padding-left: 8px; }
+  .edition:hover .chevron { color: var(--accent); }
+
+  /* Founders */
+  .founders { margin-top: 10px; }
+  .founders-list { list-style: none; padding: 0; }
+  .founders-list li {
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px;
+  }
+  .founders-list li:last-child { border-bottom: none; }
+  .founders-list .who { font-family: var(--display); font-size: 21px; font-weight: 600; color: var(--text); }
+  .founders-list .role { font-style: italic; color: var(--text-secondary); font-size: 15.5px; }
+
+  footer.colophon {
+    max-width: var(--max-width); margin: 60px auto 0; padding: 32px;
+    text-align: center; font-size: 13px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+    border-top: 1px solid var(--border-strong);
+  }
+  footer.colophon .double-rule { border-top: 1px solid var(--border-strong); margin-top: 3px; padding-top: 16px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 18px; }
+    .masthead { padding: 40px 24px 0; }
+    .wordmark { font-size: 48px; letter-spacing: 0.18em; text-indent: 0.18em; }
+    .masthead-tagline { font-size: 16px; }
+    nav.primary a { margin: 0 8px; font-size: 11px; letter-spacing: 0.2em; }
+    .lede { padding: 28px 24px 8px; }
+    .lede h1 { font-size: 32px; }
+    .lede .standfirst { font-size: 18px; }
+    section { padding: 32px 24px 4px; }
+    section h2 { font-size: 24px; }
+    .edition { grid-template-columns: 90px 1fr; gap: 16px; padding: 18px 2px; }
+    .edition .year { font-size: 28px; }
+    .edition .chevron { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="index.html" class="wordmark">SEED</a>
+  <div class="masthead-tagline">Symposium on Evidence of Economic Development</div>
+</header>
+<div class="masthead-rule"><div class="double"></div></div>
+
+<nav class="primary">
+  <a href="index.html" class="active">About</a>
+  <a href="seed-2026.html">2026</a>
+  <a href="seed-2025.html">2025</a>
+  <a href="seed-2024.html">2024</a>
+</nav>
+
+<div class="masthead-rule"><hr></div>
+
+<section style="padding-top: 48px;">
+  <span class="section-label">About SEED</span>
+  <h2>Development, broadly defined</h2>
+  <p class="dropcap">The <strong>Symposium on Evidence of Economic Development</strong> — SEED — is a boutique symposium on the economics of development, broadly defined. It emerged out of a joint collaboration between <a href="https://sites.google.com/site/homepageasc/home" target="_blank" rel="noopener">Anindya Chakrabarti</a> (IIM Ahmedabad), <a href="https://pavelchakraborty.weebly.com/" target="_blank" rel="noopener">Pavel Chakraborty</a> (University of Bath), and <a href="https://www.ritwikbanerjee.in" target="_blank" rel="noopener">Ritwik Banerjee</a> (IIM Bangalore), who founded it in 2024 with a simple aim: to create a setting in which development economists can sit with a small number of papers for long enough to say something useful about them.</p>
+  <p>SEED does not sit in one place. It caravans from one host institution to another, carrying its format and its community with it. Each edition is co-organised with a local host at the institution where the symposium lands that year, and the program is kept deliberately small so that every paper gets the time it deserves.</p>
+  <p>Development, at SEED, is read generously. The program draws on empirical, experimental, theoretical, and historical work alike — covering questions that cut across education and health, firms and trade, labor markets, institutions, gender, environment, behavior, and the political economy of policy. What unites the papers is not a single method or a narrow sub-field but a shared concern with how economies grow, how they fail to, and what the evidence actually tells us.</p>
+</section>
+
+<div class="ornament">❦</div>
+
+<section>
+  <span class="section-label">Editions</span>
+  <h2>The caravan so far</h2>
+  <div class="editions">
+    <a class="edition" href="seed-2026.html">
+      <div class="year">2026</div>
+      <div class="details">
+        <div class="title">SEED 2026</div>
+        <div class="sub">20–21 May 2026 · University of Bath</div>
+      </div>
+      <div class="chevron">→</div>
+    </a>
+    <a class="edition" href="seed-2025.html">
+      <div class="year">2025</div>
+      <div class="details">
+        <div class="title">SEED 2025</div>
+        <div class="sub">28–29 June 2025 · IIM Bangalore</div>
+      </div>
+      <div class="chevron">→</div>
+    </a>
+    <a class="edition" href="seed-2024.html">
+      <div class="year">2024</div>
+      <div class="details">
+        <div class="title">SEED 2024</div>
+        <div class="sub">The inaugural edition</div>
+      </div>
+      <div class="chevron">→</div>
+    </a>
+  </div>
+</section>
+
+<div class="ornament">❦</div>
+
+<section>
+  <span class="section-label">Founders &amp; Organizers</span>
+  <h2>Who runs the symposium</h2>
+  <p>SEED was founded in 2024 by Anindya Chakrabarti, Pavel Chakraborty, and Ritwik Banerjee. Each edition is co-organised with a local host at the institution where the symposium lands that year.</p>
+  <ul class="founders-list">
+    <li>
+      <span class="who"><a href="https://sites.google.com/site/homepageasc/home" target="_blank" rel="noopener">Anindya Chakrabarti</a></span>
+      <span class="role">— IIM Ahmedabad · co-founder</span>
+    </li>
+    <li>
+      <span class="who"><a href="https://pavelchakraborty.weebly.com/" target="_blank" rel="noopener">Pavel Chakraborty</a></span>
+      <span class="role">— University of Bath · co-founder</span>
+    </li>
+    <li>
+      <span class="who"><a href="https://www.ritwikbanerjee.in" target="_blank" rel="noopener">Ritwik Banerjee</a></span>
+      <span class="role">— IIM Bangalore · co-founder</span>
+    </li>
+  </ul>
+</section>
+
+<footer class="colophon">
+  <div class="double-rule">SEED &nbsp;·&nbsp; Symposium on Evidence of Economic Development</div>
+</footer>
+
+</body>
+</html>
