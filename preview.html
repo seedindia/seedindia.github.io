@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEED — Logo Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7ee;
+    --bg-alt: #f3ecd8;
+    --text: #1f1a17;
+    --text-secondary: #5a4f47;
+    --text-muted: #9a8e83;
+    --border: #e5dcc7;
+    --border-strong: #cfc2a4;
+    --accent: #7a1e2b;
+    --accent-soft: #a43c3e;
+    --display: 'Cormorant Garamond', Georgia, serif;
+    --body: 'EB Garamond', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--body); color: var(--text); background: var(--bg);
+    line-height: 1.65; font-size: 18px; padding: 48px 24px;
+  }
+
+  .page-title { max-width: 820px; margin: 0 auto 40px; text-align: center; }
+  .page-title h1 { font-family: var(--display); font-size: 34px; font-weight: 600; margin-bottom: 8px; }
+  .page-title p { font-style: italic; color: var(--text-secondary); font-size: 17px; }
+
+  .sample {
+    max-width: 820px; margin: 0 auto 56px;
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    padding: 48px 32px 40px;
+    position: relative;
+  }
+  .sample-label {
+    position: absolute; top: -13px; left: 24px;
+    background: var(--bg); padding: 0 12px;
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    font-weight: 700; color: var(--accent);
+  }
+  .sample .explainer {
+    text-align: center; font-size: 14px; color: var(--text-muted);
+    font-style: italic; margin-top: 24px; padding-top: 18px;
+    border-top: 1px dashed var(--border-strong);
+  }
+
+  /* Masthead (shared) */
+  .mh { text-align: center; padding-bottom: 24px; }
+  .wordmark {
+    position: relative; display: inline-block;
+    font-family: var(--display); font-weight: 700; font-size: 68px;
+    letter-spacing: 0.22em; color: var(--text); text-indent: 0.22em;
+    line-height: 1; text-decoration: none;
+  }
+  .tagline {
+    font-family: var(--display); font-style: italic;
+    font-size: 19px; color: var(--text-secondary); margin-top: 14px;
+  }
+  .rule-double {
+    border-top: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border-strong);
+    height: 4px; margin-top: 28px;
+  }
+  .rule-single {
+    border: none; border-top: 1px solid var(--border-strong);
+    margin-top: 14px;
+  }
+
+  /* Dummy section beneath masthead */
+  .dummy {
+    padding-top: 28px; text-align: center;
+  }
+  .dummy p {
+    font-family: var(--display); font-style: italic;
+    color: var(--text-muted); font-size: 18px; max-width: 520px; margin: 0 auto;
+  }
+
+  /* ===== Option 2 (B) — sprout fleuron only, plain wordmark ===== */
+  .sample-b .ornament { text-align: center; padding: 36px 0 10px; }
+  .sample-b .fleuron { display: inline-block; width: 26px; height: 30px; color: var(--border-strong); vertical-align: middle; }
+
+  /* ===== Option 3 (C) — integrated wordmark only, old ❦ ornament ===== */
+  .sample-c .wordmark-sprout {
+    position: absolute; top: -0.18em; right: -0.28em;
+    width: 0.6em; height: 0.5em; color: var(--accent); pointer-events: none;
+  }
+  .sample-c .ornament {
+    text-align: center; color: var(--border-strong);
+    font-size: 22px; letter-spacing: 0.5em; padding: 36px 0 10px;
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="sprout" viewBox="0 0 32 40">
+      <ellipse cx="16" cy="35" rx="4.2" ry="1.8" fill="currentColor"/>
+      <path d="M16 33 C 16 26, 14 20, 16 12 C 17 8, 18 5, 18 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M17 14 C 22 12, 26 8, 27 3 C 22 5, 18 9, 17 14 Z" fill="currentColor"/>
+      <path d="M15 22 C 11 20, 8 17, 7 13 C 11 15, 14 18, 15 22 Z" fill="currentColor" opacity="0.72"/>
+    </symbol>
+    <symbol id="sprout-flourish" viewBox="0 0 40 32">
+      <ellipse cx="28" cy="29" rx="3.2" ry="1.5" fill="currentColor"/>
+      <path d="M28 27 C 28 20, 24 13, 16 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M20 10 C 12 8, 6 4, 3 0 C 8 6, 14 10, 20 10 Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page-title">
+  <h1>SEED — Logo Preview</h1>
+  <p>Two samples. Pick one.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- OPTION 2 (B): sprout fleuron replaces the ❦ ornaments        -->
+<!-- The "SEED" wordmark stays plain — no flourish on the letters -->
+<!-- ============================================================ -->
+<div class="sample sample-b">
+  <div class="sample-label">Option 2 · Sprout Fleuron</div>
+
+  <div class="mh">
+    <span class="wordmark">SEED</span>
+    <div class="tagline">Symposium on Evidence of Economic Development</div>
+  </div>
+  <div class="rule-double"></div>
+  <hr class="rule-single">
+
+  <div class="dummy">
+    <p>A small gathering of economists, held each year at a different host institution.</p>
+  </div>
+
+  <div class="ornament">
+    <svg class="fleuron" aria-hidden="true"><use href="#sprout"/></svg>
+  </div>
+
+  <div class="dummy">
+    <p>Development, broadly defined.</p>
+  </div>
+
+  <div class="ornament">
+    <svg class="fleuron" aria-hidden="true"><use href="#sprout"/></svg>
+  </div>
+
+  <div class="explainer">
+    The word "SEED" is plain. A small sprout (seed + stem + two leaves) replaces the ❦ between every section — so the motif is woven through the whole page, quietly.
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- OPTION 3 (C): sprout flourish integrated into the wordmark   -->
+<!-- The ❦ ornaments between sections stay as they were           -->
+<!-- ============================================================ -->
+<div class="sample sample-c">
+  <div class="sample-label">Option 3 · Integrated Wordmark</div>
+
+  <div class="mh">
+    <span class="wordmark">SEED<svg class="wordmark-sprout" aria-hidden="true"><use href="#sprout-flourish"/></svg></span>
+    <div class="tagline">Symposium on Evidence of Economic Development</div>
+  </div>
+  <div class="rule-double"></div>
+  <hr class="rule-single">
+
+  <div class="dummy">
+    <p>A small gathering of economists, held each year at a different host institution.</p>
+  </div>
+
+  <div class="ornament">❦</div>
+
+  <div class="dummy">
+    <p>Development, broadly defined.</p>
+  </div>
+
+  <div class="ornament">❦</div>
+
+  <div class="explainer">
+    A burgundy sprout grows from the upper-right of the "D", leaning left over the word — so the logo itself carries the motif. Section dividers stay as the existing ❦ fleuron.
+  </div>
+</div>
+
+</body>
+</html>
