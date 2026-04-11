@@ -36,10 +36,8 @@
 
   /* Masthead */
   .masthead { max-width: var(--max-width); margin: 0 auto; padding: 56px 32px 0; text-align: center; }
-  .wordmark { position: relative; display: inline-block; font-family: var(--display); font-weight: 700; font-size: 68px; letter-spacing: 0.22em; color: var(--text); text-indent: 0.22em; border-bottom: none; line-height: 1; }
+  .wordmark { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 68px; letter-spacing: 0.22em; color: var(--text); text-indent: 0.22em; border-bottom: none; line-height: 1; }
   .wordmark:hover { color: var(--accent); border-bottom: none; }
-  .wordmark-sprout { position: absolute; top: -0.18em; right: -0.28em; width: 0.6em; height: 0.5em; color: var(--accent); pointer-events: none; }
-  .wordmark:hover .wordmark-sprout { color: var(--accent-soft); }
   .masthead-tagline { font-family: var(--display); font-style: italic; font-size: 19px; color: var(--text-secondary); margin-top: 14px; letter-spacing: 0.01em; }
   .masthead-rule { max-width: var(--max-width); margin: 28px auto 0; padding: 0 32px; }
   .masthead-rule hr { border: none; border-top: 1px solid var(--border-strong); }
@@ -62,9 +60,9 @@
 
   /* Section */
   section { max-width: var(--max-width); margin: 0 auto; padding: 40px 32px 8px; }
-  .ornament { text-align: center; padding: 36px 0 6px; }
-  .fleuron { display: inline-block; width: 22px; height: 26px; color: var(--border-strong); vertical-align: middle; }
-  .ornament .fleuron { width: 26px; height: 30px; }
+  .ornament { text-align: center; padding: 44px 0 10px; }
+  .fleuron { display: inline-block; width: 64px; height: 30px; color: var(--accent); vertical-align: middle; }
+  .ornament .fleuron { width: 72px; height: 34px; }
   .section-label { display: block; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
   section h2 { font-family: var(--display); font-weight: 600; font-size: 30px; color: var(--text); text-align: center; margin-bottom: 22px; letter-spacing: -0.005em; }
   section p { margin-bottom: 18px; color: var(--text); }
@@ -129,22 +127,14 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <symbol id="sprout" viewBox="0 0 32 40">
-      <ellipse cx="16" cy="35" rx="4.2" ry="1.8" fill="currentColor"/>
-      <path d="M16 33 C 16 26, 14 20, 16 12 C 17 8, 18 5, 18 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M17 14 C 22 12, 26 8, 27 3 C 22 5, 18 9, 17 14 Z" fill="currentColor"/>
-      <path d="M15 22 C 11 20, 8 17, 7 13 C 11 15, 14 18, 15 22 Z" fill="currentColor" opacity="0.72"/>
-    </symbol>
-    <symbol id="sprout-flourish" viewBox="0 0 40 32">
-      <ellipse cx="28" cy="29" rx="3.2" ry="1.5" fill="currentColor"/>
-      <path d="M28 27 C 28 20, 24 13, 16 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M20 10 C 12 8, 6 4, 3 0 C 8 6, 14 10, 20 10 Z" fill="currentColor"/>
+    <symbol id="sprout" viewBox="0 0 60 32">
+      <path d="M4 16 C 8 -2, 52 -2, 56 16 C 52 34, 8 34, 4 16 Z" fill="currentColor"/>
     </symbol>
   </defs>
 </svg>
 
 <header class="masthead">
-  <a href="index.html" class="wordmark">SEED<svg class="wordmark-sprout" aria-hidden="true" focusable="false"><use href="#sprout-flourish"/></svg></a>
+  <a href="index.html" class="wordmark">SEED</a>
   <div class="masthead-tagline">Symposium on Evidence of Economic Development</div>
 </header>
 <div class="masthead-rule"><div class="double"></div></div>
