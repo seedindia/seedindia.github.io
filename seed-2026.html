@@ -15,9 +15,10 @@
     --accent: #7a1e2b; --accent-soft: #a43c3e;
     --display: 'Cormorant Garamond', Georgia, serif;
     --body: 'EB Garamond', Georgia, serif;
-    --max-width: 760px;
+    --max-width: 820px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body { font-family: var(--body); color: var(--text); background: var(--bg); line-height: 1.7; font-size: 19px; -webkit-font-smoothing: antialiased; font-feature-settings: "liga","dlig","kern"; }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(122,30,43,0.25); transition: border-color 0.15s, color 0.15s; }
   a:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
@@ -41,21 +42,51 @@
 
   .ornament { text-align: center; color: var(--accent); font-size: 34px; line-height: 1; letter-spacing: 0.5em; padding: 40px 0 12px; user-select: none; }
 
-  section { max-width: var(--max-width); margin: 0 auto; padding: 32px 32px 8px; }
+  section { max-width: var(--max-width); margin: 0 auto; padding: 20px 32px 8px; }
   .section-label { display: block; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-  section h2 { font-family: var(--display); font-weight: 600; font-size: 28px; color: var(--text); text-align: center; margin-bottom: 20px; }
+  section h2 { font-family: var(--display); font-weight: 600; font-size: 32px; color: var(--text); text-align: center; margin-bottom: 24px; }
   section p { margin-bottom: 16px; }
 
-  .callout { background: var(--paper); border: 1px solid var(--border-strong); padding: 28px 32px; margin-top: 8px; box-shadow: 0 1px 0 var(--border-strong), 0 10px 24px rgba(31,26,23,0.06); }
-  .callout p:last-child { margin-bottom: 0; }
-  .callout .quill { text-align: center; color: var(--accent); font-size: 28px; line-height: 1; letter-spacing: 0.5em; margin-bottom: 16px; user-select: none; }
+  /* Program */
+  .program-note { text-align: center; font-style: italic; color: var(--text-muted); font-size: 15px; margin-bottom: 18px; }
+  .day-block { margin-top: 18px; }
+  .day-heading { font-family: var(--display); font-weight: 600; font-size: 26px; color: var(--accent); text-align: center; letter-spacing: 0.02em; margin-bottom: 4px; }
+  .day-sub { font-family: var(--display); font-style: italic; font-size: 17px; color: var(--text-secondary); text-align: center; margin-bottom: 14px; }
+  .session-heading { font-family: var(--body); text-transform: uppercase; letter-spacing: 0.24em; font-size: 11px; color: var(--accent); text-align: center; margin: 24px 0 6px; font-weight: 700; }
+  .session-heading .plenary-mark { color: var(--text-muted); font-weight: 600; letter-spacing: 0.18em; margin-left: 6px; }
 
-  .info-table { width: 100%; margin-top: 10px; border-collapse: collapse; }
-  .info-table tr { border-bottom: 1px solid var(--border); }
-  .info-table tr:last-child { border-bottom: none; }
-  .info-table th, .info-table td { text-align: left; padding: 14px 4px; vertical-align: baseline; }
-  .info-table th { font-family: var(--body); font-weight: 600; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); width: 36%; }
-  .info-table td { font-family: var(--display); font-size: 21px; color: var(--text); font-weight: 500; }
+  .event { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 12px 2px; border-bottom: 1px dotted var(--border); align-items: baseline; }
+  .event:last-child { border-bottom: none; }
+  .event .time { font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--text-secondary); text-transform: uppercase; }
+  .event .paper-title { font-family: var(--display); font-size: 21px; font-weight: 500; color: var(--text); line-height: 1.3; }
+  .event .paper-title a { color: var(--text); border-bottom: 1px solid rgba(122,30,43,0.3); }
+  .event .paper-title a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .event .speaker { font-family: var(--body); font-style: italic; font-size: 15px; color: var(--text-secondary); margin-top: 3px; }
+  .event.simple { grid-template-columns: 170px 1fr; }
+  .event.simple .note { font-family: var(--display); font-size: 20px; color: var(--text); }
+
+  .break-event { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 10px 2px; align-items: baseline; color: var(--text-muted); font-style: italic; }
+  .break-event .time { font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; font-style: normal; }
+  .break-event .label { font-family: var(--display); font-size: 19px; }
+
+  .dinner-event { margin-top: 10px; padding: 14px 18px; background: var(--paper); border: 1px solid var(--border-strong); display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: baseline; box-shadow: 0 1px 0 var(--border-strong); }
+  .dinner-event .time { font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+  .dinner-event .label { font-family: var(--display); font-size: 20px; color: var(--text); font-style: italic; }
+
+  /* Abstracts */
+  .abstracts-note { text-align: center; font-style: italic; color: var(--text-muted); font-size: 15px; margin-bottom: 10px; }
+  .abstract-item { padding: 28px 0 26px; border-bottom: 1px solid var(--border); scroll-margin-top: 20px; }
+  .abstract-item:last-child { border-bottom: none; }
+  .abstract-item h3 { font-family: var(--display); font-weight: 600; font-size: 26px; color: var(--text); margin-bottom: 10px; line-height: 1.28; }
+  .abstract-item .byline { font-family: var(--body); font-size: 15px; color: var(--text-secondary); margin-bottom: 6px; }
+  .abstract-item .byline .institution { color: var(--text-muted); }
+  .abstract-item .coauthors { font-family: var(--body); font-size: 14px; color: var(--text-muted); font-style: italic; margin-bottom: 14px; }
+  .abstract-item .abstract-body { font-size: 18px; line-height: 1.75; color: var(--text); }
+  .abstract-item .abstract-body p { margin-bottom: 12px; }
+  .abstract-item .abstract-body p:last-child { margin-bottom: 0; }
+  .abstract-item .paper-link { display: inline-block; margin-top: 10px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+  .abstract-item .back-to-top { display: inline-block; margin-top: 12px; margin-left: 16px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); border-bottom-color: var(--border-strong); }
+  .abstract-item .tbc { color: var(--text-muted); font-style: italic; }
 
   footer.colophon { max-width: var(--max-width); margin: 56px auto 0; padding: 32px; text-align: center; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); border-top: 1px solid var(--border-strong); }
   footer.colophon a { color: var(--text-muted); border-bottom-color: var(--border-strong); }
@@ -70,9 +101,13 @@
     .page-head { padding: 28px 24px 8px; }
     .page-head h1 { font-size: 36px; }
     .page-head .meta { font-size: 17px; }
-    section { padding: 24px 24px 4px; }
-    .callout { padding: 22px 22px; }
-    .info-table td { font-size: 18px; }
+    section { padding: 18px 22px 4px; }
+    .day-heading { font-size: 22px; }
+    .event, .break-event, .dinner-event { grid-template-columns: 1fr; gap: 2px; }
+    .event .time, .break-event .time, .dinner-event .time { margin-bottom: 2px; }
+    .event .paper-title { font-size: 19px; }
+    .abstract-item h3 { font-size: 22px; }
+    .abstract-item .abstract-body { font-size: 17px; }
   }
 </style>
 </head>
@@ -94,34 +129,330 @@
 <div class="masthead-rule"><hr></div>
 
 <div class="page-head">
-  <span class="eyebrow">The Upcoming Edition</span>
+  <span class="eyebrow">The Third Edition</span>
   <h1>SEED 2026</h1>
   <div class="meta">20–21 May 2026 · Department of Economics, University of Bath</div>
 </div>
 
 <div class="ornament">❦</div>
 
-<section>
-  <span class="section-label">Announcement</span>
-  <h2>The caravan travels to Bath</h2>
-  <div class="callout">
-    <div class="quill">❦</div>
-    <p>The third edition of SEED will be hosted by the <a href="https://www.bath.ac.uk/departments/department-of-economics/" target="_blank" rel="noopener">Department of Economics at the University of Bath</a> on <strong>20–21 May 2026</strong>. The program and the list of presenters will be announced in the months ahead.</p>
-    <p>Following the format of previous editions, the symposium will run over two days and feature themed sessions on the economics of development — broadly defined — with 45–50 minute paper slots and ample time for discussion.</p>
+<section id="program">
+  <span class="section-label">The Programme</span>
+  <h2>Schedule of Sessions</h2>
+  <p class="program-note">Click a paper title to jump to its abstract below.</p>
+
+  <!-- DAY 1 -->
+  <div class="day-block">
+    <div class="day-heading">Day One</div>
+    <div class="day-sub">Wednesday, 20 May 2026</div>
+
+    <div class="event simple">
+      <span class="time">9:30 – 9:45 AM</span>
+      <div class="note">Opening Remarks</div>
+    </div>
+
+    <div class="session-heading">Session 1</div>
+
+    <div class="event">
+      <span class="time">9:45 – 10:30 AM</span>
+      <div>
+        <div class="paper-title"><a href="#ronak-jain">&ldquo;Social Norms and Reciprocity&rdquo;</a></div>
+        <div class="speaker">Ronak Jain (University of Zurich)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <span class="time">10:30 – 11:15 AM</span>
+      <div>
+        <div class="paper-title"><a href="#sanchari-roy">&ldquo;Collective Aspirations and Group Cooperation&rdquo;</a></div>
+        <div class="speaker">Sanchari Roy (University of Exeter)</div>
+      </div>
+    </div>
+
+    <div class="break-event">
+      <span class="time">11:15 – 11:30 AM</span>
+      <span class="label">Tea</span>
+    </div>
+
+    <div class="session-heading">Session 2</div>
+
+    <div class="event">
+      <span class="time">11:30 AM – 12:15 PM</span>
+      <div>
+        <div class="paper-title"><a href="#joseph-gomes">&ldquo;Symbolic Policies Cause Economic Harm: Cognitive and Behavioural Responses to Nationalist Exclusion&rdquo;</a></div>
+        <div class="speaker">Joseph Flavian Gomes (UCLouvain)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <span class="time">12:15 – 1:00 PM</span>
+      <div>
+        <div class="paper-title"><a href="#nikita-sangwan">&ldquo;Informing the Job Search: A Field Experiment in an Urban Labor Market&rdquo;</a></div>
+        <div class="speaker">Nikita Sangwan (Queen's University Belfast)</div>
+      </div>
+    </div>
+
+    <div class="break-event">
+      <span class="time">1:00 – 2:00 PM</span>
+      <span class="label">Lunch</span>
+    </div>
+
+    <div class="session-heading">Session 3 <span class="plenary-mark">· Plenary I</span></div>
+
+    <div class="event">
+      <span class="time">2:00 – 3:00 PM</span>
+      <div>
+        <div class="paper-title"><a href="#stefano-caria">Plenary Address</a></div>
+        <div class="speaker">Stefano Caria (University of Oxford)</div>
+      </div>
+    </div>
+
+    <div class="break-event">
+      <span class="time">3:00 – 3:15 PM</span>
+      <span class="label">Tea</span>
+    </div>
+
+    <div class="session-heading">Session 4</div>
+
+    <div class="event">
+      <span class="time">3:15 – 4:00 PM</span>
+      <div>
+        <div class="paper-title"><a href="#amrutha-manjunath">&ldquo;Language Barriers, Internal Migration, and Labor Markets in General Equilibrium&rdquo;</a></div>
+        <div class="speaker">Amrutha Manjunath (University of Nottingham)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <span class="time">4:00 – 4:45 PM</span>
+      <div>
+        <div class="paper-title"><a href="#wondatir-gebre">Title to be announced</a></div>
+        <div class="speaker">Wondatir Gebre (Lancaster University)</div>
+      </div>
+    </div>
+
+    <div class="dinner-event">
+      <span class="time">6:00 – 9:00 PM</span>
+      <span class="label">Symposium Dinner at the Coconut Tree</span>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-block">
+    <div class="day-heading" style="margin-top:36px">Day Two</div>
+    <div class="day-sub">Thursday, 21 May 2026</div>
+
+    <div class="session-heading">Session 5</div>
+
+    <div class="event">
+      <span class="time">9:30 – 10:15 AM</span>
+      <div>
+        <div class="paper-title"><a href="#jiao-wang">&ldquo;Liquidity Shocks, Crime Perceptions and Household Financial Stability: Theory and Evidence from the 2019 Kenyan Demonetisation&rdquo;</a></div>
+        <div class="speaker">Jiao Wang (University of Sussex)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <span class="time">10:15 – 11:00 AM</span>
+      <div>
+        <div class="paper-title"><a href="#aruni-mitra">&ldquo;Identity Politics, Partisan Sentiment and Household Spending&rdquo;</a></div>
+        <div class="speaker">Aruni Mitra (University of Manchester)</div>
+      </div>
+    </div>
+
+    <div class="break-event">
+      <span class="time">11:00 – 11:15 AM</span>
+      <span class="label">Tea</span>
+    </div>
+
+    <div class="session-heading">Session 6</div>
+
+    <div class="event">
+      <span class="time">11:15 AM – 12:00 Noon</span>
+      <div>
+        <div class="paper-title"><a href="#kyungbo-han">&ldquo;Protected or Postponed? The Dynamics of Deforestation in Protected and Non-Protected Areas&rdquo;</a></div>
+        <div class="speaker">Kyungbo Han (University of Bath)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <span class="time">12:00 Noon – 12:45 PM</span>
+      <div>
+        <div class="paper-title"><a href="#marta-santamaria">Title to be announced</a></div>
+        <div class="speaker"><a href="https://sites.google.com/view/martasantamaria/" target="_blank" rel="noopener">Marta Santamaria</a> / Wenbo (TBC)</div>
+      </div>
+    </div>
+
+    <div class="break-event">
+      <span class="time">1:00 – 2:00 PM</span>
+      <span class="label">Lunch</span>
+    </div>
+
+    <div class="session-heading">Session 7</div>
+
+    <div class="event">
+      <span class="time">2:00 – 2:45 PM</span>
+      <div>
+        <div class="paper-title"><a href="#antonio-navas">&ldquo;R&amp;D Outsourcing: Theory and Evidence&rdquo;</a></div>
+        <div class="speaker">Antonio Navas (University of Sheffield)</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <span class="time">2:45 – 3:30 PM</span>
+      <div>
+        <div class="paper-title"><a href="#anindya-chakrabarti">&ldquo;Price Shock and Supply Chain Reorganization&rdquo;</a></div>
+        <div class="speaker">Anindya S. Chakrabarti (IIM Ahmedabad)</div>
+      </div>
+    </div>
+
+    <div class="break-event">
+      <span class="time">3:30 – 3:45 PM</span>
+      <span class="label">Tea</span>
+    </div>
+
+    <div class="session-heading">Session 8 <span class="plenary-mark">· Plenary II</span></div>
+
+    <div class="event">
+      <span class="time">3:45 – 4:45 PM</span>
+      <div>
+        <div class="paper-title"><a href="#kunal-sen">Plenary Address</a></div>
+        <div class="speaker">Kunal Sen (University of Manchester)</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <div class="ornament">❦</div>
 
-<section>
-  <span class="section-label">At a Glance</span>
-  <h2>Details</h2>
-  <table class="info-table">
-    <tr><th>Dates</th><td>20–21 May 2026</td></tr>
-    <tr><th>Host</th><td><a href="https://www.bath.ac.uk/departments/department-of-economics/" target="_blank" rel="noopener">Department of Economics, University of Bath</a></td></tr>
-    <tr><th>Format</th><td>Two days, in person</td></tr>
-    <tr><th>Participation</th><td>By invitation</td></tr>
-  </table>
+<section id="abstracts">
+  <span class="section-label">Titles &amp; Abstracts</span>
+  <h2>Papers</h2>
+  <p class="abstracts-note">Listed in order of presentation. Abstracts are reproduced as submitted.</p>
+
+  <div class="abstract-item" id="ronak-jain">
+    <h3>Social Norms and Reciprocity</h3>
+    <div class="byline"><strong>Ronak Jain</strong> <span class="institution">· University of Zurich</span></div>
+    <div class="abstract-body"><p class="tbc">Abstract to be circulated ahead of the symposium.</p></div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="sanchari-roy">
+    <h3>Collective Aspirations and Group Cooperation</h3>
+    <div class="byline"><strong>Sanchari Roy</strong> <span class="institution">· University of Exeter</span></div>
+    <div class="abstract-body">
+      <p>This paper studies whether collective aspiration building can enhance cooperation in groups. We first develop a theoretical model in which individuals experience a psychological loss when contributing less than a shared aspiration level, mitigating free riding incentives but also, in the process, generating multiple equilibria in group cooperation. Raising collective aspirations can therefore move groups to a higher-cooperation equilibrium. We test these predictions using a lab-in-the-field experiment with women's self-help groups, where half received a one-day &ldquo;Dream Building&rdquo; training designed to raise collective aspirations and group identity. Following the intervention, treatment groups contributed 30% more on average in a public good game compared to control groups, with the effect persisting, though attenuated, even three months later. These findings highlight the potential for psychological interventions to overcome free riding in groups, offering valuable insights for the design of group-based development programs.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="joseph-gomes">
+    <h3>Symbolic Policies Cause Economic Harm: Cognitive and Behavioural Responses to Nationalist Exclusion</h3>
+    <div class="byline"><strong>Joseph Flavian Gomes</strong> <span class="institution">· UCLouvain</span></div>
+    <div class="coauthors">with Amma Panin (UCLouvain), Ritwik Banerjee (IIM Bangalore), and Emmy Lindstam (IE Madrid)</div>
+    <div class="abstract-body">
+      <p>Ethnonationalist governments adopt symbolic policies that challenge the status of ethnic and religious minorities as equal members of the nation. We propose that exposure to such policies reduces the cognitive bandwidth of marginalised groups, leading to suboptimal economic decisions. We test this hypothesis in India. About 1,800 gig workers performed data entry and information processing tasks in a field experiment. In the course of completing their tasks, workers were randomly exposed to social media content referencing exclusionary policies. The policies varied in whether they were primarily symbolic or whether they were also likely to cause direct material harm to affected minority participants. We measured decision making by allowing workers to choose between two payment contracts, one of which would objectively lead to higher earnings for a given worker. Despite no change in productivity, treated participants were significantly more likely to select economically suboptimal contracts, leading to lower earnings. We explore additional data, including cognitive tests and categorisations of mistakes, that suggest that wrong contract choice is driven by increased cognitive load. Our findings demonstrate how even purely symbolic exclusionary policies can have tangible economic consequences, potentially exacerbating marginalisation of minority groups through cognitive and psychological channels.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="nikita-sangwan">
+    <h3>Informing the Job Search: A Field Experiment in an Urban Labor Market</h3>
+    <div class="byline"><strong>Nikita Sangwan</strong> <span class="institution">· Queen's University Belfast</span></div>
+    <div class="coauthors">with Farzana Afridi (Indian Statistical Institute, Delhi) and Soubhagya Sahoo (Higher School of Economics University, Moscow)</div>
+    <div class="abstract-body">
+      <p>We examine the impact of labor market information on job search behavior and employment outcomes of job seekers in urban India. Through a cluster-randomized intervention in Delhi, over 3,000 men and women are randomized into a treatment group in which they are informed and assisted in accessing a job matching platform, supplemented by phone messages that deliver either non-personalized or personalized labor market information; or a control group in which neither assistance with the matching platform nor any phone messages is given. Month-level analysis up to a year after intervention shows that while men reduced overall job search, women's search shifted to online modes. Although any employment impacts petered out in the long run, we find evidence of a marginal shift in occupational structure towards salaried work away from casual jobs, along with higher earnings, for women in later months. These impacts were relatively stronger in the personalized messaging group. We highlight the role of expectations and (mis-)beliefs about the labor market in explaining our findings.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="stefano-caria">
+    <h3>Plenary Address</h3>
+    <div class="byline"><strong>Stefano Caria</strong> <span class="institution">· University of Oxford</span></div>
+    <div class="abstract-body"><p class="tbc">Title and abstract to be announced.</p></div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="amrutha-manjunath">
+    <h3>Language Barriers, Internal Migration, and Labor Markets in General Equilibrium</h3>
+    <div class="byline"><strong>Amrutha Manjunath</strong> <span class="institution">· University of Nottingham</span></div>
+    <div class="abstract-body">
+      <p>This paper studies how language barriers impact internal migration, the skill premium, and aggregate welfare using rich microdata from India applied to a quantitative spatial general equilibrium framework. I first document four empirical facts: (1) workers migrate less often to locations where they face high language barriers; (2) migrants with high language barriers are employed less often in speaking-intensive occupations; (3) migrants with high language barriers get a wage premium; and (4) these patterns are strongest for unskilled workers. To explain these facts, I then develop and estimate a static migration model in which heterogeneous workers sort across occupations and locations by skill and language, with wages accounting for worker selection and adjusting in general equilibrium. I show through the lens of the model how language barriers, by increasing worker sorting and selection, significantly obstruct internal migration, augment skill premium, and reduce aggregate welfare. As economies shift towards services, language barriers increasingly impede aggregate gains due to the rising prevalence of speaking-intensive occupations. In the absence of language barriers—relative to observed changes—structural change would have increased aggregate welfare by 1.9 percent. Finally, I calibrate costs of both program provision and learning languages to evaluate potential benefits of language programs for unskilled migrants. Using the calibrated model, I argue that welfare benefits of implementing language programs would outweigh costs.</p>
+    </div>
+    <a class="paper-link" href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/amruthamanjunath/website/main/Manjunath_Amrutha_JMPDraft.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="wondatir-gebre">
+    <h3>Title to be announced</h3>
+    <div class="byline"><strong>Wondatir Gebre</strong> <span class="institution">· Lancaster University</span></div>
+    <div class="abstract-body"><p class="tbc">Title and abstract to be confirmed.</p></div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="jiao-wang">
+    <h3>Liquidity Shocks, Crime Perceptions and Household Financial Stability: Theory and Evidence from the 2019 Kenyan Demonetisation</h3>
+    <div class="byline"><strong>Jiao Wang</strong> <span class="institution">· University of Sussex</span></div>
+    <div class="coauthors">with Sambit Bhattacharyya (University of Sussex), Chirantan Chatterjee (University of Sussex), and Stephen Lartey (University of Sussex)</div>
+    <div class="abstract-body">
+      <p>This paper examines the socioeconomic and welfare impacts of Kenya's 2019 demonetisation policy. Using a difference-in-differences design with Afrobarometer survey data, we document a stark urban–rural divide: demonetisation significantly accelerated mobile money adoption and improved crime perceptions in urban areas, but imposed severe, asymmetric income shocks on cash-dependent households. To rationalise these findings, we construct a Two-Agent New Keynesian (TANK) model featuring a cash-in-advance constraint and an informal sector subject to a working capital constraint. The model reveals that demonetisation triggers a &ldquo;liquidity vacuum&rdquo;, as informal firms hoard cash to survive, causing a severe recession. Furthermore, material welfare calculations demonstrate that digital infrastructure dictates economic resilience; rural cash-only households suffer the most catastrophic lifetime welfare losses because cash and digital finance remain technological complements rather than substitutes in agricultural economies. These findings underscore that the success of monetary modernisation hinges on pre-existing digital institutional capacity.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="aruni-mitra">
+    <h3>Identity Politics, Partisan Sentiment and Household Spending</h3>
+    <div class="byline"><strong>Aruni Mitra</strong> <span class="institution">· The University of Manchester</span></div>
+    <div class="coauthors">with Arkadev Ghosh (Duke University) and Ronit Mukherji (Ashoka University)</div>
+    <div class="abstract-body">
+      <p>We examine how political shifts affect household economic sentiment and spending in identity-polarized settings. Using panel data on over 178,000 Indian households, we find that sentiment about personal finances—and, to a lesser extent, the national economy—predicts expenditure, even after accounting for income changes. Using close state elections, we show that Muslims become markedly more pessimistic than Hindus about national economic conditions following victories by the Hindu-nationalist party, but exhibit relatively smaller differences in personal financial sentiment, and no detectable divergence in expenditure. A Bayesian learning framework explains the insulation of consumption from politically induced sentiment shocks through the limited transmission of macro-beliefs to individual behaviour in high-volatility environments.</p>
+    </div>
+    <a class="paper-link" href="https://www.dropbox.com/scl/fi/bs6zpmomo6w835jawqxeo/Ghosh-Mitra-Mukherji-2025.pdf?rlkey=kcuc105j6zwm2w7c5ocwl4unq&e=1&dl=0" target="_blank" rel="noopener">Read the paper ↗</a>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="kyungbo-han">
+    <h3>Protected or Postponed? The Dynamics of Deforestation in Protected and Non-Protected Areas</h3>
+    <div class="byline"><strong>Kyungbo Han</strong> <span class="institution">· University of Bath</span></div>
+    <div class="coauthors">with Erik Katovich (University of Connecticut)</div>
+    <div class="abstract-body">
+      <p>This paper examines the effectiveness of forest protected areas (PAs) in a dynamic setting. Using georeferenced data, we investigate whether the establishment of PAs in the Brazilian Amazon immediately accelerates deforestation in surrounding areas, and whether logging activities gradually shift back into the PAs over time. We develop a spatial dynamic optimization model to show that the dynamic displacement of deforestation is fundamentally driven by the nonrenewable nature of trees in the Amazon.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="marta-santamaria">
+    <h3>Title to be announced</h3>
+    <div class="byline"><strong><a href="https://sites.google.com/view/martasantamaria/" target="_blank" rel="noopener">Marta Santamaria</a></strong> / Wenbo <span class="institution">· TBC</span></div>
+    <div class="abstract-body"><p class="tbc">Speaker and paper to be confirmed.</p></div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="antonio-navas">
+    <h3>R&amp;D Outsourcing: Theory and Evidence</h3>
+    <div class="byline"><strong>Antonio Navas</strong> <span class="institution">· University of Sheffield</span></div>
+    <div class="coauthors">with Adriana Brenis (University of Sussex) and Peter Wright (University of Sheffield)</div>
+    <div class="abstract-body">
+      <p>This study examines theoretically and empirically the relationship between R&amp;D outsourcing and the intensive and extensive margins of R&amp;D. We develop a theoretical model in which heterogeneous firms decide whether to undertake R&amp;D activities, whether to outsource R&amp;D tasks and the volume of both activities. We test the main predictions of the model using Spanish firm-level data, by using a staggered adoption difference-in-difference (DiD) approach combined with matching methods. Our results show that R&amp;D outsourcing positively affects both a firm's internal and total R&amp;D investment, consistent with our theoretical prediction when the elasticity of substitution between different sources of knowledge is small enough. We also find that the results differ by a firm's export status and the nature of the outsourcing (i.e., domestic or international). At the industry level, we find that in industries where R&amp;D outsourcing profitability is higher, fewer firms invest in R&amp;D. This is consistent with R&amp;D outsourcing being a relatively expensive activity that benefits the most productive innovative firms at the expense of the least productive innovative ones.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="anindya-chakrabarti">
+    <h3>Price Shock and Supply Chain Reorganization</h3>
+    <div class="byline"><strong>Anindya S. Chakrabarti</strong> <span class="institution">· IIM Ahmedabad</span></div>
+    <div class="coauthors">with Kanika Mahajan (Ashoka University) and Shekhar Tomar (Indian School of Business, Mohali)</div>
+    <div class="abstract-body">
+      <p>Global supply chain disruptions have become ubiquitous, driven by uncertainties arising from political conflicts, trade policies, and natural disasters. Yet little is known about firms' adaptation strategies in response to such shocks. We exploit the sudden disruption in the coal market caused by the Russia–Ukraine war and, using administrative firm-transaction data, examine how coal-procuring firms in India reorganized their supply chains in response to the subsequent surge in global coal prices. We find that firms more exposed to the shock reshore their coal input sourcing within the country, deepening existing domestic connections in the short run, while expanding their domestic supplier networks over time.</p>
+    </div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
+
+  <div class="abstract-item" id="kunal-sen">
+    <h3>Plenary Address</h3>
+    <div class="byline"><strong>Kunal Sen</strong> <span class="institution">· University of Manchester</span></div>
+    <div class="abstract-body"><p class="tbc">Title and abstract to be announced.</p></div>
+    <a class="back-to-top" href="#program">↑ Back to programme</a>
+  </div>
 </section>
 
 <div class="ornament">❦</div>
